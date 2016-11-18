@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 Implement the following operations of a queue using stacks.
+
+			 push(x) -- Push element x to the back of queue.
+			 pop() -- Removes the element from in front of queue.
+			 peek() -- Get the front element.
+			 empty() -- Return whether the queue is empty.
+			 Notes:
+			 You must use only standard operations of a stack -- which means only push to top,
+			 peek/pop from top, size, and is empty operations are valid.
+			 Depending on your language, stack may not be supported natively.
+			 You may simulate a stack by using a list or deque (double-ended queue),
+			 as long as you use only standard operations of a stack.
+			 You may assume that all operations are valid
+			 (for example, no pop or peek operations will be called on an empty queue).
+			 */
+
+			$(document).ready(function(){
+
+				/**
+				 * @constructor
+				 */
+				var Queue = function() {
+					this.stack1 = [];
+					this.stack2 = [];
+				};
+
+				/**
+				 * @param {number} x
+				 * @returns {void}
+				 */
+				Queue.prototype.push = function(x) {
+					var len = this.stack2.length;
+					while(len--){
+						this.stack1.push(this.stack2.pop());
+					}
+					this.stack1.push(x);
+				};
+
+				/**
+				 * @returns {void}
+				 */
+				Queue.prototype.pop = function() {
+					if(this.stack2.length === 0){
+						var len = this.stack1.length;
+						while(len--){
+							this.stack2.push(this.stack1.pop());
+						}
+					}
+					return this.stack2.pop();
+				};
+
+				/**
+				 * @returns {number}
+				 */
+				Queue.prototype.peek = function() {
+					if(this.stack2.length === 0){
+						var len = this.stack1.length;
+						while(len--){
+							this.stack2.push(this.stack1.pop());
+						}
+					}
+					return this.stack2[this.stack2.length - 1];
+				};
+
+				/**
+				 * @returns {boolean}
+				 */
+				Queue.prototype.empty = function() {
+					if(this.stack1.length === 0 && this.stack2.length === 0){
+						return true;
+					}
+					return false;
+				};
+
+				/*nums = [6, 2, 8, 0, 4, 7, 9, 3, 5];
+				var tt1 = mergeTwoLists(nums);
+				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');*/
+			});
+
+			/*sol:
+			 指针指来指去。
+
+			 判断条件里错了几次，if(i.val)会把val===0的情况也排除了，要写成if(i.val !== undefined)
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

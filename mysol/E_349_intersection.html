@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 Given two arrays, write a function to compute their intersection.
+
+			 Example:
+			 Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2].
+
+			 Note:
+			 Each element in the result must be unique.
+			 The result can be in any order.
+			 */
+
+			/**
+			 * @param {number[]} nums1
+			 * @param {number[]} nums2
+			 * @return {number[]}
+			 */
+			$(document).ready(function(){
+
+				var maxInt = 0;
+				var maxNum = function(num) {
+					if (num > maxInt) {
+						maxInt = num;
+					}
+				};
+
+				var intersection = function(nums1, nums2) {
+					result = [];
+					if (nums1.length >= nums2.length) {
+						bigArray = nums1;
+						smallArray = nums2;
+					} else {
+						bigArray = nums2;
+						smallArray = nums1;
+					}
+
+					bigMap = {};
+					smallMap = {};
+
+					// map the existence of the numbers
+					for (var x = 0; x < bigArray.length; x++) {
+						if (x < smallArray.length) {
+							smallMap[smallArray[x]] = true;
+							maxNum(smallArray[x]);
+						}
+						bigMap[bigArray[x]] = true;
+						maxNum(bigArray[x]);
+					}
+
+					// see when a number exists for both arrays
+					for (var y = 0; y <= maxInt; y++) {
+						if (smallMap[y] && bigMap[y]) {
+							result.push(y);
+						}
+					}
+					return result;
+				};
+
+				var nums1 = [1, 2, 2, 1]; var nums2 = [2, 2];
+				var tt1 = intersection(nums1, nums2);
+				$('#t1').html('<h2>Inputs: ' + nums1 + ' and ' + nums2 + '<br>Results: ' + tt1 + '</h2>');
+			});
+
+			/*sol:
+			 求两个数组的交集。
+
+			 先遍历nums1，第一个哈希表记录所有nums1中出现过的元素。
+
+			 再遍历nums2，第二个哈希表记录已经在结果中的元素。
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

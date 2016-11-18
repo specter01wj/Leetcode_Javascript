@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 Find the total area covered by two rectilinear rectangles in a 2D plane.
+
+			 Each rectangle is defined by its bottom left corner and top right corner
+			 as shown in the figure.
+
+			 Rectangle Area
+			 Assume that the total area is never beyond the maximum possible value of int.
+			 */
+
+			/**
+			 * @param {number} A
+			 * @param {number} B
+			 * @param {number} C
+			 * @param {number} D
+			 * @param {number} E
+			 * @param {number} F
+			 * @param {number} G
+			 * @param {number} H
+			 * @return {number}
+			 */
+			$(document).ready(function(){
+
+				var computeArea = function(A, B, C, D, E, F, G, H) {
+					var result = (C - A) * (D - B) + (G - E) * (H - F);
+					var topRightX = Math.min(C, G);
+					var topRightY = Math.min(D, H);
+					var bottomLeftX = Math.max(A, E);
+					var bottomLeftY = Math.max(B, F);
+					if(topRightX >= bottomLeftX && topRightY >= bottomLeftY){
+						return result - (topRightX - bottomLeftX) * (topRightY - bottomLeftY);
+					}
+					return result;
+				};
+
+				//var nums = [-2, -2, 2, 2, -2, -2, 2, 2];
+				var nums = [-3, 0, 3, 4, 0, -1, 9, 2];
+				var tt1 = computeArea( -3,0, 3,4, 0,-1, 9,2 );
+				$('#t1').html('<h2>Inputs: ' + nums + '<br>Results: ' + tt1 + '</h2>');
+			});
+
+			/*sol:
+
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

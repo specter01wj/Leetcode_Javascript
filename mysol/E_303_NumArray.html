@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 Given an integer array nums, find the sum of the elements between
+			 indices i and j (i ≤ j), inclusive.
+
+			 Example:
+			 Given nums = [-2, 0, 3, -5, 2, -1]
+
+			 sumRange(0, 2) -> 1
+			 sumRange(2, 5) -> -1
+			 sumRange(0, 5) -> -3
+			 Note:
+			 You may assume that the array does not change.
+			 There are many calls to sumRange function.
+			 */
+
+			/**
+			 * @param {number} x
+			 * @return {boolean}
+			 */
+			$(document).ready(function(){
+
+				/**
+				 * @constructor
+				 * @param {number[]} nums
+				 */
+				var NumArray = function(nums) {
+					var len = nums.length,
+							i;
+
+					this.sums = [];
+					this.sums[0] = 0;
+
+					for (i = 0; i < len; i++) {
+						this.sums[i + 1] = this.sums[i] + nums[i];
+					}
+				};
+
+				/**
+				 * @param {number} i
+				 * @param {number} j
+				 * @return {number}
+				 */
+				NumArray.prototype.sumRange = function(i, j) {
+					return this.sums[j + 1] - this.sums[i];
+				};
+
+				/**
+				 * Your NumArray object will be instantiated and called as such:
+				 * var numArray = new NumArray(nums);
+				 * numArray.sumRange(0, 1);
+				 * numArray.sumRange(0, 2);
+				 */
+
+				var nums = [-2, 0, 3, -5, 2, -1];
+				var numArray = new NumArray(nums);
+				var tt1 = numArray.sumRange(2, 5);
+				$('#t1').html('<h2>Inputs: ' + nums + '<br>Results: ' + tt1 + '</h2>');
+			});
+
+			/*sol:
+			 求和，给定数组不会变，求和方法会反复调用多次。
+
+			 维护一个数组，第n个值就是从0到n的和。
+
+			 比如求2到5的和，就是0到5的和减去0到1的和。
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*Given an array nums, write a function to move all 0's to the end of it
+			while maintaining the relative order of the non-zero elements.
+
+			For example, given nums = [0, 1, 0, 3, 12], after calling your function,
+			nums should be [1, 3, 12, 0, 0].
+
+			Note:
+			You must do this in-place without making a copy of the array.
+					Minimize the total number of operations.*/
+
+
+			/**
+			 * @param {number[]} nums
+			 * @return {void} Do not return anything, modify nums in-place instead.
+			 */
+			/*sol_1: 把数组中所有的零放到最后，不能简单地再开一个数组。
+
+			第一种优雅的做法，开一个变量count=0，把数组中不为零的数，按顺序移动到下标为count的位置上，
+			每移动一个count++，最后补上0。*/
+
+			/*$(document).ready(function(){
+				
+				var moveZeroes = function(nums){
+
+					var count = 0;
+
+					for(var i = 0; i < nums.length; i++){
+						if(nums[i] !== 0){
+							nums[count] = nums[i];
+							count++;
+						}
+					}
+
+					for(; count < nums.length; count++){
+						nums[count] = 0;
+					}
+
+					return nums;
+
+				};
+
+				nums = [0, 1, 0, 3, 12];
+				var tt1 = moveZeroes(nums);
+				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
+			});*/
+
+			/*sol_2: 第二种调用了强大的splice方法，先记录下0的位置，
+			从后往前把0从数组中删掉（从前往后会打乱下标的顺序），最后再补齐。*/
+			$(document).ready(function(){
+
+				var moveZeroes = function(nums){
+
+					var indexArr = [], i;
+
+					for(i = 0; i < nums.length; i++){
+						if(nums[i] === 0){
+							indexArr.push(i);
+						}
+					}
+
+					for(i = indexArr.length - 1; i >= 0; i--){
+						nums.splice(indexArr[i], 1);
+					}
+
+					for(i = 0; i < indexArr.length; i++){
+						nums.push(0);
+					}
+
+					return nums;
+
+				};
+
+				nums = [0, 1, 0, 3, 12];
+				var tt1 = moveZeroes(nums);
+				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
+			});
+			
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

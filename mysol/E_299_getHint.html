@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 You are playing the following Bulls and Cows game with your friend:
+			 You write down a number and ask your friend to guess what the number is.
+			 Each time your friend makes a guess, you provide a hint that indicates
+			 how many digits in said guess match your secret number exactly in both
+			 digit and position (called "bulls") and how many digits match the secret number
+			 but locate in the wrong position (called "cows").
+
+			 Your friend will use successive guesses and hints to eventually derive
+			 the secret number.
+
+			 For example:
+
+			 Secret number:  "1807"
+			 Friend's guess: "7810"
+			 Hint: 1 bull and 3 cows. (The bull is 8, the cows are 0, 1 and 7.)
+			 Write a function to return a hint according to the secret number and friend's guess,
+			 use A to indicate the bulls and B to indicate the cows. In the above example,
+			 your function should return "1A3B".
+
+			 Please note that both secret number and friend's guess may contain duplicate digits,
+			 for example:
+
+			 Secret number:  "1123"
+			 Friend's guess: "0111"
+			 In this case, the 1st 1 in friend's guess is a bull, the 2nd or 3rd 1 is a cow,
+			 and your function should return "1A1B".
+			 You may assume that the secret number and your friend's guess only contain digits,
+			 and their lengths are always equal.
+			 */
+
+			/**
+			 * @param {string} secret
+			 * @param {string} guess
+			 * @return {string}
+			 */
+			$(document).ready(function(){
+
+				var getHint = function(secret, guess) {
+					var secretDict = {}, guessDict = {}, A = 0, B = 0;
+					for(var i = 0; i < secret.length; i++){
+						if(secret[i] === guess[i]){
+							A++;
+						}else{
+							if(!guessDict[secret[i]]){
+								if(!secretDict[secret[i]]){
+									secretDict[secret[i]] = 1;
+								}else{
+									secretDict[secret[i]]++;
+								}
+							}else{
+								guessDict[secret[i]]--;
+								B++;
+							}
+							if(!secretDict[guess[i]]){
+								if(!guessDict[guess[i]]){
+									guessDict[guess[i]] = 1;
+								}else{
+									guessDict[guess[i]]++;
+								}
+							}else{
+								secretDict[guess[i]]--;
+								B++;
+							}
+						}
+					}
+					return A + "A" + B + "B";
+				};
+
+				var sec = '1807'; var guess = '7810';
+				var tt1 = getHint(sec, guess);
+				$('#t1').html('<h2>Inputs: ' + sec + ' and ' + guess + '<br>Results: ' + tt1 + '</h2>');
+			});
+
+			/*sol:
+			 猜字游戏，位置和数字都对记做A，数字相同位置不对记做B。
+
+			 对于B的情况，开两个哈希表，分别记录还没对应的数字出现的次数。
+
+			 在之后的遍历中如果找到了这个数，count--。
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

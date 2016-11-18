@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 Implement the following operations of a stack using queues.
+
+			 push(x) -- Push element x onto stack.
+			 pop() -- Removes the element on top of the stack.
+			 top() -- Get the top element.
+			 empty() -- Return whether the stack is empty.
+
+			 Notes:
+			 You must use only standard operations of a queue --
+			 which means only push to back, peek/pop from front, size,
+			 and is empty operations are valid.
+
+			 Depending on your language, queue may not be supported natively.
+			 You may simulate a queue by using a list or deque (double-ended queue),
+			 as long as you use only standard operations of a queue.
+
+			 You may assume that all operations are valid (for example,
+			 no pop or top operations will be called on an empty stack).
+
+			 Update (2015-06-11):
+			 The class name of the Java function had been updated to MyStack instead of Stack.
+			 */
+
+			$(document).ready(function(){
+
+				/**
+				 * @constructor
+				 */
+				var Stack = function() {
+					this.stack1 = [];
+					this.stack2 = [];
+				};
+
+				/**
+				 * @param {number} x
+				 * @returns {void}
+				 */
+				Stack.prototype.push = function(x) {
+					var temp;
+
+					this.stack2.push(x);
+
+					while(this.stack1.length > 0) {
+						this.stack2.push(this.stack1.shift());
+					}
+
+					temp = this.stack2;
+					this.stack2 = this.stack1;
+					this.stack1 = temp;
+				};
+
+				/**
+				 * @returns {void}
+				 */
+				Stack.prototype.pop = function() {
+					return this.stack1.shift();
+				};
+
+				/**
+				 * @returns {number}
+				 */
+				Stack.prototype.top = function() {
+					return this.stack1[0];
+				};
+
+				/**
+				 * @returns {boolean}
+				 */
+				Stack.prototype.empty = function() {
+					return this.stack1.length === 0;
+				};
+
+				/*nums = [6, 2, 8, 0, 4, 7, 9, 3, 5];
+				var tt1 = mergeTwoLists(nums);
+				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');*/
+			});
+
+			/*sol:
+			 用队列模拟栈。
+			 只能用队列的入队，出队，长度和是否为空四个功能。
+			 也就是js数组的push(),shift(),length,length===0。
+
+			 两个队列倒来倒去。
+			 入栈操作就是找到不为空的队列，入队。
+			 出栈和查看栈顶元素的操作是一样的，把不为空的那个队列，
+			 除了最后一个元素的其他所有元素都倒到另一个里去。
+			 栈是否为空就是两个队列是否都为空。
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

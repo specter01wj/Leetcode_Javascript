@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 Given a linked list, determine if it has a cycle in it.
+
+			 Follow up:
+			 Can you solve it without using extra space?
+			 */
+
+			/**
+			 * Definition for singly-linked list.
+			 * function ListNode(val) {
+			 *     this.val = val;
+			 *     this.next = null;
+			 * }
+			 */
+
+			/**
+			 * @param {ListNode} head
+			 * @return {boolean}
+			 */
+			$(document).ready(function(){
+
+				var hasCycle = function(head) {
+					var slow = head, fast = head;
+					while(true){
+						if(fast === null || fast.next === null){
+							return false;
+						}
+						slow = slow.next;
+						fast = fast.next.next;
+						if(slow === fast){
+							return true;
+						}
+					}
+				};
+
+				nums = [6, 2, 8, 0, 4, 7, 9, 3, 5];
+				var tt1 = hasCycle(nums);
+				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
+			});
+
+			/*sol:
+			 判断链表是否有环。
+
+			 先是用了额外空间的做法。
+
+			 移出每个访问过的节点，指向头节点，如果遇到了指向头节点的点，说明有环。
+
+			 不用额外空间：
+
+			 使用快慢指针，如果重合则说明有环。
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

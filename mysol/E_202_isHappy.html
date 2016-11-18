@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 Write an algorithm to determine if a number is "happy".
+
+			 A happy number is a number defined by the following process:
+			 Starting with any positive integer,
+			 replace the number by the sum of the squares of its digits,
+			 and repeat the process until the number equals 1 (where it will stay),
+			 or it loops endlessly in a cycle which does not include 1.
+			 Those numbers for which this process ends in 1 are happy numbers.
+
+			 Example: 19 is a happy number
+
+			 12 + 92 = 82
+			 82 + 22 = 68
+			 62 + 82 = 100
+			 12 + 02 + 02 = 1
+			 */
+
+			/**
+			 * @param {number} n
+			 * @return {boolean}
+			 */
+			$(document).ready(function(){
+
+				var isHappy = function(n) {
+					if(n === 1 || n === 7) return true;
+					if(n < 10) return false;
+					n = n.toString();
+					var nextNum = 0, tmp;
+					for(var i = 0; i < n.length; i++){
+						tmp = Math.floor(n[i]);
+						nextNum += tmp * tmp;
+					}
+					return isHappy(nextNum);
+				};
+
+				nums = 116;
+				var tt1 = isHappy(nums);
+				$('#t1').html('<h2>Inputs: ' + nums + '<br>Results: ' + tt1 + '</h2>');
+			});
+
+			/*sol:
+			 累加每一位数字的平方数，如果等于1就是happy number，否则递归去找，遇到死循环说明不是。
+			 常规思路是开个哈希表，记录已经出现的数，一遇到重复就返回false。
+
+			 使用带哈希表的代码，把个位数打个表，发现只有1和7是happy number，其他都不是。
+			 那么为了去掉哈希表，我直接写死了1-9的结果，因为happy number的运算很多中间结果都是个位数，
+			 遇到个位数就可以不用做下去了。
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

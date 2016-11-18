@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 You are climbing a stair case. It takes n steps to reach to the top.
+
+			 Each time you can either climb 1 or 2 steps.
+			 In how many distinct ways can you climb to the top?
+			 */
+
+			/**
+			 * @param {number} n
+			 * @return {number}
+			 */
+			$(document).ready(function(){
+
+				var climbStairs = function(n) {
+					if(n === 0) return 0;
+					if(n === 1) return 1;
+					if(n === 2) return 2;
+					var dp = [0, 1, 2];
+
+					for(var i = 3; i <= n; i++){
+						dp[i] = dp[i - 1] + dp[i - 2];
+					}
+
+					return dp[n];
+				};
+
+				nums = 8;
+				var tt1 = climbStairs(nums);
+				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
+			});
+
+			/*sol:
+			 直接递归超时了，要动态规划。
+
+			 打印前几个数就可以看出规律，1, 2, 3, 5, 8...
+
+			 从3开始dp[i] = dp[i - 1] + dp[i - 2]。
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

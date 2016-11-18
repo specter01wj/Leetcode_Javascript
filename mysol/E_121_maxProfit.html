@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 Say you have an array for which the ith element is the price of a given stock on day i.
+
+			 If you were only permitted to complete at most one transaction (ie, buy one and
+			 sell one share of the stock), design an algorithm to find the maximum profit.
+			 */
+
+			/**
+			 * @param {number[]} prices
+			 * @return {number}
+			 */
+			$(document).ready(function(){
+
+				var maxProfit = function(prices) {
+					var min = Infinity;
+					var res = -Infinity;
+					for(var i = 0; i < prices.length; i++){
+						if(prices[i] < min){
+							min = prices[i];
+						}
+						if(prices[i] > min && prices[i] - min > res){
+							res = prices[i] - min;
+						}
+					}
+					if(isFinite(res)){
+						return res;
+					}else{
+						return 0;
+					}
+				};
+
+				var nums = [4,3,2,3,5,8,6,5];
+				var tt1 = maxProfit(nums);
+				$('#t1').html('<h2>Inputs: ' + nums + '<br>Results: ' + tt1 + '</h2>');
+			});
+
+			/*sol:
+			 最低买进最高卖出。
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

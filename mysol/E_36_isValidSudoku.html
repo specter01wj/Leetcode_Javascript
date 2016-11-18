@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
+
+			 The Sudoku board could be partially filled,
+			 where empty cells are filled with the character '.'.
+
+
+			 A partially filled sudoku which is valid.
+
+			 Note:
+			 A valid Sudoku board (partially filled) is not necessarily solvable.
+			 Only the filled cells need to be validated.
+			 */
+
+			/**
+			 * @param {character[][]} board
+			 * @return {boolean}
+			 */
+			$(document).ready(function(){
+
+				var isValidSudoku = function(board) {
+					function isValid(num, flag){
+						var tmp = Math.pow(2, num - 1);
+						if((flag.val & tmp) !== 0){
+							return false;
+						}else{
+							flag.val = flag.val | tmp;
+							return true;
+						}
+					}
+
+					var i = 0, j = 0, m = 0, n =0, cell = 0;
+					var row = {val : 0}, column = {val : 0}, square = {val : 0};
+					for(i = 0; i < 9; i++){
+						for(j = 0; j < 9; j++){
+							cell = parseInt(board[i][j]);
+							if(!isValid(cell, row)){
+								return false;
+							}
+							cell = parseInt(board[j][i]);
+							if(!isValid(cell, column)){
+								return false;
+							}
+							cell = parseInt(board[parseInt(i / 3) * 3 + parseInt(j / 3)][(i % 3) * 3 + (j % 3)]);
+							if(!isValid(cell, square)){
+								return false;
+							}
+						}
+						row.val = column.val = square.val = 0;
+					}
+					return true;
+				};
+
+				var nums = [".87654321","2........","3........","4........","5........","6........","7........","8........","9........"];
+				var tt1 = isValidSudoku(nums);
+				$('#t1').html('<h2>Inputs: ' + nums + '<br>Results: ' + tt1 + '</h2>');
+			});
+
+			/*sol:
+			 就是看看每行是否有重复的数字，然后看看每列，最后看小方块。
+
+			 正好用了一下最近get的新姿势，没有用map存1-9是否访问过。
+
+			 一个变量_bit就记下了这新信息，用位运算。
+
+			 比如来的数是4，就是100，与_bit做位与，如果没有出现过100&000是0，
+			 否则100&100不等于0，最后用100|000记下4已经访问过了。
+
+
+			 合并3种情况比较麻烦啊...
+
+			 前面2种好说，square的循环很纠结。
+
+			 首先要用内层循环j的0-8算出下面的下标：
+
+			 (0,0) (0,1) (0,2)
+			 (1,0) (1,1) (2,2)
+			 (2,0) (2,1) (2,2)
+
+			 规律就是X = j / 3, Y = j % 3
+
+			 然后要用外层循环i的0-8遍历第0个到第8个square
+
+			 (0,0) (0,1) (0,2) (0,3) (0,4) (0,5)
+			 (1,0) (1,1) (2,2) (1,3) (1,4) (2,5)
+			 (2,0) (2,1) (2,2) (2,3) (2,4) (2,5)
+
+			 (3,0) (3,1) (3,2)
+			 (4,0) (4,1) (4,2)
+			 (5,0) (5,1) (5,2)
+
+			 画三个就能看出规律了吧，右边的square跟左上的square相比Y多了3；
+			 下边的square跟左上的square相比X多了3；
+
+			 在内层循环的square之上加上的偏移量是：
+
+			 (0,0) (0,3) (0,6)
+			 (3,0) (3,3) (3,6)
+			 (6,0) (6,3) (6,6)
+
+			 规律就是X = (i / 3) * 3, Y = (i % 3) * 3
+
+			 所以合起来就是X = (i / 3) * 3 + (j / 3) , Y = (i % 3) * 3 + (j % 3)
+
+			 好费劲，心好累。
+
+			 简化版在此！
+
+			 js对象是引用传递，在方法里改这对象的val，相当于C指针的变通。
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

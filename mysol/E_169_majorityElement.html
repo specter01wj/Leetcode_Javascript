@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 Given an array of size n, find the majority element.
+			 The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+
+			 You may assume that the array is non-empty and
+			 the majority element always exist in the array.
+					*/
+			/**
+			 * @param {number[]} nums
+			 * @return {number}
+			 */
+			$(document).ready(function(){
+				
+				var majorityElement = function(nums){
+					nums = nums.sort();
+					return nums[parseInt(nums.length / 2)];
+				};
+
+				var arr1 = [3, 3, 4, 2, 4, 4, 2, 4];
+				var tt1 = majorityElement(arr1);
+				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
+			});
+
+			/*sol: 排个序，中间的那个就是正确结果。这道题有Solution，解法非常多。*/
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

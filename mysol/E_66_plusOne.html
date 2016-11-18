@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 Given a non-negative number represented as an array of digits, plus one to the number.
+
+			 The digits are stored such that the most significant digit is at the head of the list.
+			 */
+
+			/**
+			 * @param {number[]} digits
+			 * @return {number[]}
+			 */
+			$(document).ready(function(){
+
+				var plusOne = function(digits) {
+					var carry = 1;
+					var d_tmp = [];
+					for(var j=0;j<digits.length; j++){
+						d_tmp[j] = digits[j];
+					}
+					for(var i = d_tmp.length - 1; i >= 0; i--){
+						var sum = d_tmp[i] + carry;
+						if(sum === 10){
+							d_tmp[i] = 0;
+							carry = 1;
+						}else{
+							d_tmp[i] = sum;
+							carry = 0;
+						}
+					}
+					if(carry === 1){
+						d_tmp.unshift(1);
+					}
+					return d_tmp;
+				};
+
+				var nums = [3,4,7,9];
+				var tt1 = plusOne(nums);
+				$('#t1').html('<h2>Inputs: ' + nums + '<br>Results: ' + tt1 + '</h2>');
+			});
+
+			/*sol:
+			 大数加法。
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			 Given a sorted array, remove the duplicates in place such that
+			 each element appear only once and return the new length.
+
+			 Do not allocate extra space for another array, you must do this in place
+			 with constant memory.
+
+			 For example,
+			 Given input array nums = [1,1,2],
+
+			 Your function should return length = 2, with the first two elements of
+			 nums being 1 and 2 respectively. It doesn't matter what you leave beyond the new length.
+			 */
+
+			/**
+			 * @param {number[]} nums
+			 * @return {number}
+			 */
+			$(document).ready(function(){
+
+				var removeDuplicates = function(nums) {
+					var aRemove = [], i, previous;
+					for(i = 0; i < nums.length; i++){
+						if(nums[i] === previous){
+							aRemove.push(i);
+						}
+						previous = nums[i];
+					}
+					for(i = aRemove.length - 1; i >= 0; i--){
+						nums.splice(aRemove[i], 1);
+					}
+					return nums.length;
+				};
+
+				var nums = [6,6,3,3,7,9];
+				var tt1 = removeDuplicates(nums);
+				$('#t1').html('<h2>Inputs: ' + nums + '<br>Results: ' + tt1 + '</h2>');
+			});
+
+			/*sol:
+			 从有序数组中删除重复的元素。
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>
