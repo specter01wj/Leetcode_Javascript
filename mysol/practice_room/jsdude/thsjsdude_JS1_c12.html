@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<title>remove duplicate char</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+		//How will you remove duplicate characters from a sting?
+			$(document).ready(function(){
+				
+				var removeDuplicateChar = function(str){
+					
+					var len = str.length;
+					var char1;
+					var charCount = {};
+					var newStr = [];
+					
+					for(var i =0; i<len; i++){
+						char1 = str[i];
+						if(charCount[char1]){
+							charCount[char1]++;
+						}
+						else
+						charCount[char1] = 1;
+					}
+					
+					for (var j in charCount){
+						if (charCount[j]==1)
+							newStr.push(j);
+					}
+					
+					return newStr.join('');
+				}
+				
+				var a1 = 'Learn more javascript dude';
+				var tt1 = removeDuplicateChar(a1);
+				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
+			});
+			
+			
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

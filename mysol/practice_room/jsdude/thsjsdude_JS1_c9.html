@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<title>reverse words</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+		//How would you reverse words in a sentence?
+			$(document).ready(function(){
+				
+				var reverseWords = function(str){
+					
+					var tmp = [];
+					var wordLen = 0;
+					
+					for(var i = str.length - 1; i >= 0; i--){
+						if(str[i] == ' ' || i == 0){
+							tmp.push(str.substr(i, wordLen + 1));
+							wordLen = 0;
+						}
+						else{
+							wordLen ++;
+						}
+					}
+					
+					return tmp.join(' ');
+				}
+				
+				var a1 = 'such a nice day!';
+				var tt1 = reverseWords(a1);;
+				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
+			});
+			
+			
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>
