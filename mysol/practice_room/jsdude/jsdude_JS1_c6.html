@@ -5,36 +5,38 @@
 		<script>
 			//How would you merge two sorted array?
 			$(document).ready(function(){
-				
+
 				var mergeSortedArray = function(a, b){
-					
-					var merged = [], aElm = a[0], bElm = b[0], i = 1, j = 1;
-					
-					if(a.length ==0) return b;
-					if(b.length ==0) return a;
-					
-					while(aElm || bElm){
-						if((aElm && !bElm) || aElm < bElm){
+
+					var merged = [];
+					var aElm = a[0], bElm = b[0];
+					var i = 1, j = 1;
+
+					if(a.length == 0) return b;
+					if(b.length == 0) return a;
+
+					while( aElm || bElm ) {
+						if( (aElm && !bElm) || aElm < bElm ) {
 							merged.push(aElm);
 							aElm = a[i++];
-						}   
-						else {
+						} else {
 							merged.push(bElm);
 							bElm = b[j++];
 						}
 					}
-					
+
 					return merged;
+
 				}
-				
+
 				var tt1 = mergeSortedArray([1,2,2,5,6,9], [1,2,3,13,29]);;
 				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
 			});
 			// I will keep a pointer for each array
-			
+
 		</script>
 	</head>
-	
+
 	<body>
 		<div>
 			<p id='t1'></p>

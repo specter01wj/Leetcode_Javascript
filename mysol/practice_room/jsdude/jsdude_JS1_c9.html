@@ -6,34 +6,33 @@
 		<script>
 		//How would you reverse words in a sentence?
 			$(document).ready(function(){
-				
+
 				var reverseWords = function(str){
-					
-					var tmp = [];
-					var wordLen = 0;
-					
-					for(var i = str.length - 1; i >= 0; i--){
-						if(str[i] == ' ' || i == 0){
+
+					var tmp = [], wordLen = 0;
+
+					for( var i = str.length; i >= 0; i-- ) {
+						if( str[i] == ' ' || i == 0 ) {
 							tmp.push(str.substr(i, wordLen + 1));
 							wordLen = 0;
-						}
-						else{
+						} else {
 							wordLen ++;
 						}
 					}
-					
+
 					return tmp.join(' ');
+
 				}
-				
+
 				var a1 = 'such a nice day!';
 				var tt1 = reverseWords(a1);;
 				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
 			});
-			
-			
+
+
 		</script>
 	</head>
-	
+
 	<body>
 		<div>
 			<p id='t1'></p>

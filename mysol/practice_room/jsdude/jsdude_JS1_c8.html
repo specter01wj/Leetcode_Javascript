@@ -6,27 +6,28 @@
 		<script>
 		//How would you reverse a string in JavaScript?
 			$(document).ready(function(){
-				
+
 				var reverse_1 = function(str){
-					
+
 					var tmp = '';
-					
-					for(var i = str.length - 1; i >= 0; i--){
+
+					for( var i = str.length - 1; i >= 0; i-- ){
 						tmp += str[i];
 					}
 
 					return tmp;
+
 				}
-				
+
 				var a1 = 'such a nice day!';
 				var tt1 = reverse_1(a1);;
 				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
 			});
 			//I can loop through the string and concatenate letters to a new string
-			
+
 		</script>
 	</head>
-	
+
 	<body>
 		<div>
 			<p id='t1'></p>

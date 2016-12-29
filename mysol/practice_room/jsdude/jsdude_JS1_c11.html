@@ -6,35 +6,36 @@
 		<script>
 		// How could you find the first non repeating char in a string?
 			$(document).ready(function(){
-				
+
 				var firstNonRepeatChar = function(str){
-					
-					var len = str.length;
-					var char1;
-					var charCount = {};
-					for(var i =0; i<len; i++){
+
+					var char1, charCnt = {};
+
+					for( var i = 0; i < str.length; i++ ) {
 						char1 = str[i];
-						if(charCount[char1]){
-							charCount[char1]++;
+						if( charCnt[char1] ) {
+							charCnt[char1]++;
+						} else {
+							charCnt[char1] = 1;
 						}
-						else
-						charCount[char1] = 1;
 					}
-					for (var j in charCount){
-						if (charCount[j]==1)
+
+					for( var j in charCnt) {
+						if( charCnt[j] == 1 )
 							return j;
 					}
+					
 				}
-				
+
 				var a1 = 'the quick brown fox jumps then quickly blow air';
 				var tt1 = firstNonRepeatChar(a1);
 				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
 			});
-			
-			
+
+
 		</script>
 	</head>
-	
+
 	<body>
 		<div>
 			<p id='t1'></p>
