@@ -7,28 +7,23 @@
 		//If you have a function that generate random number between 1 to 5
 		// how could u generate random number 5 to 7 by using that function?
 			$(document).ready(function(){
-				
-				var rand5 = function(){
-					
-					return ( 1 + Math.random()*4 );
-					
+
+				var rand5 = function() {
+					return ( 1 + Math.random() * 96 );
 				}
-				
-				var rand7 = function(){
-					
-					return ( 5 + rand5() / 5 * 2 );
-					
+
+				var rand7 = function() {
+					return ( 97 + rand5() / 97 * 3 );
 				}
-				
-				
+				//try 97 to 100
 				var tt1 = rand7();
 				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
 			});
-			
-			
+
+
 		</script>
 	</head>
-	
+
 	<body>
 		<div>
 			<p id='t1'></p>

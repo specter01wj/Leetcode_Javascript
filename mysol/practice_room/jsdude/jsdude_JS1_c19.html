@@ -9,41 +9,41 @@
 
 				var subStringFinder = function(arr1, arr2){
 
-					var len1 = arr1.length;
-					var sublen = arr2.length;
 					var idx = 0;
 
-					for(var i=0, j=0; i < len1; i++){
-						if(arr1[i] == arr2[j]){
-							j++;
-						}
-						else{
-							j = 0;
+					for( var i = 0; i < arr1.length; i++ ) {
+
+						for( var p = 0, k = 0; k < arr2.length; k++ ) {
+							if( arr1[i+p] == arr2[k] ) {
+								p++;
+							} else {
+								break;
+							}
+
+							if ( k == 1 ) {
+								idx = i;
+							} else if( k == arr2.length - 1 ) {
+								return idx;
+							}
 						}
 
-						if(j == 0 || j == 1){
-							idx = i;
-						}
-						else if(j == sublen){
-							return idx;
-						}
 					}
 
 					return -1;
 
 				}
 
-				var str1 = 'abbcdabbbbbck';
-				var str2 = 'bck';
+				var str1 = 'abbcdaaaaabbck';
+				var str2 = 'abbck';
 				var tt1 = subStringFinder(str1, str2);
 				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
 			});
-			
+
 			//Will use to pointer (one for string and another for the substring) while iterating the string.
 			// And will have another variable to hold the starting index of the initial match.
 		</script>
 	</head>
-	
+
 	<body>
 		<div>
 			<p id='t1'></p>

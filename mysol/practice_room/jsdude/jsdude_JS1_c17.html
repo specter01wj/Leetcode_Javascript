@@ -6,36 +6,35 @@
 		<script>
 		//How would you find the largest sum of any two elements?
 			$(document).ready(function(){
-				
+
 				var topSum = function(arr1){
-					
-					var len1 = arr1.length;
-					var b1 = arr1[0];
-					var b2 = arr1[1];
-					
-					for(var i=2; i < len1; i++){
-						if(arr1[i] > b1){
+
+					var b1 = arr1[0], b2 = arr1[1];
+
+					for( var i = 2; i < arr1.length; i++ ) {
+						if( arr1[i] > b1 && b1 > b2 ) {
 							b2 = b1;
 							b1 = arr1[i];
-						}
-						else if(arr1[i] > b2){
+						} else if( arr1[i] > b1 && b1 < b2  ) {
+							b1 = arr1[i];
+						} else if( arr1[i] > b2 ) {
 							b2 = arr1[i];
 						}
 					}
-					
+
 					return (b1 + b2);
-					
+
 				}
-				
-				var a1 = [12,5,11,8,9,6,4,3,2,1,7];
+
+				var a1 = [12,511,17,8,9,6,4,3,2,10,1,7];
 				var tt1 = topSum(a1);
 				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
 			});
-			
+
 			//this is actually very simple and straight forward. Just find the two largest number and return sum of them
 		</script>
 	</head>
-	
+
 	<body>
 		<div>
 			<p id='t1'></p>

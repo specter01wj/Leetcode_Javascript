@@ -6,32 +6,29 @@
 		<script>
 		//From a unsorted array, check whether there are any two numbers that will sum up to a given number?
 			$(document).ready(function(){
-				
+
 				var sumTwoFinder = function(arr1, sum1){
-					
-					var len1 = arr1.length;
-					
-					for(var i=0; i < (len1 - 1); i++){
-						for(var j=i+1; j < len1; j++){
-							if (arr1[i] + arr1[j] == sum1){
+
+					for( var i = 0; i < (arr1.length - 1); i++ ) {
+						for( var j = i + 1; j < arr1.length; j++ ) {
+							if( arr1[i] + arr1[j] == sum1 )
 								return true;
-							}
 						}
 					}
-					
+
 					return false;
-					
+
 				}
-				
+
 				var a1 = [6,4,3,2,1,7];
 				var tt1 = sumTwoFinder(a1, 8);
 				$('#t1').html('<h2>Results are:' + tt1 + '</h2>');
 			});
-			
+
 			//Simplest thing in the world. double loop
 		</script>
 	</head>
-	
+
 	<body>
 		<div>
 			<p id='t1'></p>
