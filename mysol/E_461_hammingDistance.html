@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
+
+			Given two integers x and y, calculate the Hamming distance.
+
+			Note:
+			0 ≤ x, y < 231.
+
+			Example:
+
+			Input: x = 1, y = 4
+
+			Output: 2
+
+			Explanation:
+			1   (0 0 0 1)
+			4   (0 1 0 0)
+			       ?   ?
+
+			The above arrows point to positions where the corresponding bits are different.
+			*/
+
+			/**
+			 * @param {number} x
+			 * @param {number} y
+			 * @return {number}
+			*/
+			$(document).ready(function(){
+
+				var hammingDistance = function(x, y) {
+				    let ans = 0;
+
+				    while (x || y) {
+				        ans += (x & 1) ^ (y & 1);
+				        x >>= 1;
+				        y >>= 1;
+				    }
+				      
+				    return ans;
+				};
+
+				//var nums = [-3,4,3,90]; //[2, 7, 11, 15];
+				var num1 = 1;
+				var num2 = 55;
+				var target = 4;
+				var tt1 = hammingDistance(num1, num2);
+				$('#t1').html('<h2>Inputs: ' + num1 + ' and ' + num2 + ' <br>Target: ' + target + '<br>Results: ' + tt1 + '</h2>');
+			});
+
+			/*sol:
+
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>
