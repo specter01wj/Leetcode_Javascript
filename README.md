@@ -1,7 +1,10 @@
 # leetcode-javascript
-Leetcode Solutions using Javascript
+Leetcode Solutions using Javascript<br/>
 By Jin Wang
-<br/>
+<br/><br/>
+
+<h3>Algorithms</h3><br/>
+<h4>Easy Level:</h4><br/>
 1 Two Sum.js  <br/>
 100 Same Tree.js <br/>
 101 Symmetric Tree.js <br/>
