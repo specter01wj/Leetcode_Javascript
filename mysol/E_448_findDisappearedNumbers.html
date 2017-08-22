@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			/*
+			Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+
+			Find all the elements of [1, n] inclusive that do not appear in this array.
+
+			Could you do it without extra space and in O(n) runtime? You may assume the returned list does not count as extra space.
+
+			Example:
+
+			Input:
+			[4,3,2,7,8,2,3,1]
+
+			Output:
+			[5,6]
+			*/
+
+			/**
+			 * @param {number[]} nums
+ 			 * @return {number[]}
+			 */
+			$(document).ready(function(){
+
+				var findDisappearedNumbers = function(nums) {
+				      let len = nums.length;
+					  let hash = {};
+					  let ans = [];
+
+					  nums.forEach(function(item) {
+					    hash[item] = true;
+					  });
+
+					  for (let i = 1; i <= len; i++) {
+					  	!hash[i] && (ans.push(i));
+					  }
+					    
+					  return ans;
+				};
+
+				var nums = [4,3,2,7,8,2,3,1,1,1,1,12]; 
+				var target = [5,6,9,10,11];
+				var tt1 = findDisappearedNumbers(nums);
+				$('#t1').html('<h2>Inputs: ' + nums + '<br>Target: ' + target + '<br>Results: ' + tt1 + '</h2>');
+			});
+
+			/*sol:
+
+			 */
+
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<p id='t1'></p>
+		</div>
+	</body>
+
+</html>

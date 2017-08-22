@@ -5,7 +5,7 @@ By Jin Wang
 <h3>Algorithms</h3>
 <h4>Easy Level:</h4>
 
-1 Two Sum.js  <br/>
+<strong>633</strong>	 Sum of Square Numbers <br/>
 100 Same Tree.js <br/>
 101 Symmetric Tree.js <br/>
 102 Binary Tree Level Order Traversal.js <br/>
