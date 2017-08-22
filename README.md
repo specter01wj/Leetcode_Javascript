@@ -9,20 +9,20 @@ By Jin Wang
 <strong>657</strong> Judge Route Circle <br/>
 <strong>617</strong> Merge Two Binary Trees <br/>
 <strong>561</strong> Array Partition I <br/>
-<strong>339</strong> Nested List Weight Sum <em><locked></em><br/>
+<strong>339</strong> Nested List Weight Sum <em>{locked}</em><br/>
 <strong>476</strong> Number Complement <br/>
 <strong>500</strong> Keyboard Row <br/>
-<strong>359</strong> Logger Rate Limiter <br/>
+<strong>359</strong> Logger Rate Limiter <em>{locked}</em><br/>
 <strong>557</strong> Reverse Words in a String III <br/>
 <strong>575</strong> Distribute Candies <br/>
 <strong>566</strong> Reshape the Matrix <br/>
-<strong>344</strong> Reverse String <br/>
+<strong>344</strong> Reverse String <var>[Done!]</var><br/>
 <strong>412</strong> Fizz Buzz <br/>
-<strong>346</strong> PMoving Average from Data Stream <br/>
+<strong>346</strong> PMoving Average from Data Stream <em>{locked}</em><br/>
 <strong>463</strong> FIsland Perimeter <br/>
 <strong>496</strong> Next Greater Element I <br/>
-<strong>266</strong> Palindrome Permutation <br/>
-<strong>293</strong> Flip Game <br/>
+<strong>266</strong> Palindrome Permutation <em>{locked}</em><br/>
+<strong>293</strong> Flip Game <em>{locked}</em><br/>
 <strong>637</strong> Average of Levels in Binary Tree <br/>
 120 Triangle.js <br/>
 121 Best Time to Buy and Sell Stock.js <br/>
