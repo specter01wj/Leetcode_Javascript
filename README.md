@@ -5,25 +5,25 @@ By Jin Wang
 <h3>Algorithms</h3>
 <h4>Easy Level:</h4>
 
-<strong>633</strong>	 Sum of Square Numbers <br/>
-100 Same Tree.js <br/>
-101 Symmetric Tree.js <br/>
-102 Binary Tree Level Order Traversal.js <br/>
-103 Binary Tree Zigzag Level Order Traversal.js <br/>
-104 Maximum Depth of Binary Tree.js <br/>
-105 Construct Binary Tree from Preorder and Inorder Traversal.js <br/>
-106 Construct Binary Tree from Inorder and Postorder Traversal.js <br/>
-107 Binary Tree Level Order Traversal II.js <br/>
-108 Convert Sorted Array to Binary Search Tree.js <br/>
-11 Container With Most Water.js <br/>
-110 Balanced Binary Tree.js <br/>
-111 Minimum Depth of Binary Tree.js <br/>
-112 Path Sum.js <br/>
-114 Flatten Binary Tree to Linked List.js <br/>
-116 Populating Next Right Pointers in Each Node.js <br/>
-118 Pascal's Triangle.js <br/>
-119 Pascal's Triangle II.js <br/>
-12 Integer to Roman.js <br/>
+<strong>461</strong> Hamming Distance <var>Done!</var><br/>
+<strong>657</strong> Judge Route Circle <br/>
+<strong>617</strong> Merge Two Binary Trees <br/>
+<strong>561</strong> Array Partition I <br/>
+<strong>339</strong> Nested List Weight Sum <em>locked</em><br/>
+<strong>476</strong> Number Complement <br/>
+<strong>500</strong> Keyboard Row <br/>
+<strong>359</strong> Logger Rate Limiter <br/>
+<strong>557</strong> Reverse Words in a String III <br/>
+<strong>575</strong> Distribute Candies <br/>
+<strong>566</strong> Reshape the Matrix <br/>
+<strong>344</strong> Reverse String <br/>
+<strong>412</strong> Fizz Buzz <br/>
+<strong>346</strong> PMoving Average from Data Stream <br/>
+<strong>463</strong> FIsland Perimeter <br/>
+<strong>496</strong> Next Greater Element I <br/>
+<strong>266</strong> Palindrome Permutation <br/>
+<strong>293</strong> Flip Game <br/>
+<strong>637</strong> Average of Levels in Binary Tree <br/>
 120 Triangle.js <br/>
 121 Best Time to Buy and Sell Stock.js <br/>
 122 Best Time to Buy and Sell Stock II.js <br/>
