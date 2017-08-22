@@ -5,11 +5,11 @@ By Jin Wang
 <h3>Algorithms</h3>
 <h4>Easy Level:</h4>
 
-<strong>461</strong> Hamming Distance <var style="color: #173C8C;">Done!</var><br/>
+<strong>461</strong> Hamming Distance <var>[Done!]</var><br/>
 <strong>657</strong> Judge Route Circle <br/>
 <strong>617</strong> Merge Two Binary Trees <br/>
 <strong>561</strong> Array Partition I <br/>
-<strong>339</strong> Nested List Weight Sum <em>locked</em><br/>
+<strong>339</strong> Nested List Weight Sum <em><locked></em><br/>
 <strong>476</strong> Number Complement <br/>
 <strong>500</strong> Keyboard Row <br/>
 <strong>359</strong> Logger Rate Limiter <br/>
