@@ -5,25 +5,25 @@ By Jin Wang
 <h3>Algorithms</h3>
 <h4>Easy Level:</h4>
 
-<strong>461</strong> Hamming Distance <var>[Done!]</var><br/>
-<strong>657</strong> Judge Route Circle <br/>
-<strong>617</strong> Merge Two Binary Trees <br/>
-<strong>561</strong> Array Partition I <br/>
-<strong>339</strong> Nested List Weight Sum <em>{locked}</em><br/>
-<strong>476</strong> Number Complement <br/>
-<strong>500</strong> Keyboard Row <br/>
-<strong>359</strong> Logger Rate Limiter <em>{locked}</em><br/>
-<strong>557</strong> Reverse Words in a String III <br/>
-<strong>575</strong> Distribute Candies <br/>
-<strong>566</strong> Reshape the Matrix <br/>
-<strong>344</strong> Reverse String <var>[Done!]</var><br/>
-<strong>412</strong> Fizz Buzz <br/>
-<strong>346</strong> PMoving Average from Data Stream <em>{locked}</em><br/>
-<strong>463</strong> FIsland Perimeter <br/>
-<strong>496</strong> Next Greater Element I <br/>
-<strong>266</strong> Palindrome Permutation <em>{locked}</em><br/>
-<strong>293</strong> Flip Game <em>{locked}</em><br/>
-<strong>637</strong> Average of Levels in Binary Tree <br/>
+<strong>461</strong> <u>Hamming Distance</u> <var>[Done!]</var><br/>
+<strong>657</strong> <u>Judge Route Circle</u> <br/>
+<strong>617</strong> <u>Merge Two Binary Trees</u> <br/>
+<strong>561</strong> <u>Array Partition I</u> <br/>
+<strong>339</strong> <u>Nested List Weight Sum</u> <em>{locked}</em><br/>
+<strong>476</strong> <u>Number Complement</u> <br/>
+<strong>500</strong> <u>Keyboard Row</u> <br/>
+<strong>359</strong> <u>Logger Rate Limiter</u> <em>{locked}</em><br/>
+<strong>557</strong> <u>Reverse Words in a String III</u> <br/>
+<strong>575</strong> <u>Distribute Candies</u> <br/>
+<strong>566</strong> <u>Reshape the Matrix</u> <br/>
+<strong>344</strong> <u>Reverse String</u> <var>[Done!]</var><br/>
+<strong>412</strong> <u>Fizz Buzz</u> <br/>
+<strong>346</strong> <u>PMoving Average from Data Stream</u> <em>{locked}</em><br/>
+<strong>463</strong> <u>FIsland Perimeter</u> <br/>
+<strong>496</strong> <u>Next Greater Element I</u> <br/>
+<strong>266</strong> <u>Palindrome Permutation</u> <em>{locked}</em><br/>
+<strong>293</strong> <u>Flip Game</u> <em>{locked}</em><br/>
+<strong>637</strong> <u>Average of Levels in Binary Tree</u> <br/>
 120 Triangle.js <br/>
 121 Best Time to Buy and Sell Stock.js <br/>
 122 Best Time to Buy and Sell Stock II.js <br/>
