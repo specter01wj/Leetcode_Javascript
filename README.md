@@ -5,7 +5,7 @@ By Jin Wang
 <h3>Algorithms</h3>
 <h4>Easy Level:</h4>
 
-<strong>461</strong> <u>Hamming Distance</u> <var>[Done!]</var><br/>
+<strong>461</strong> Hamming Distance <u><var>[Done!]</var></u><br/>
 <strong>657</strong> <u>Judge Route Circle</u> <br/>
 <strong>617</strong> <u>Merge Two Binary Trees</u> <br/>
 <strong>561</strong> <u>Array Partition I</u> <br/>
