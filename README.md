@@ -14,6 +14,14 @@ By Jin Wang
 |9|**Palindrome Number**|Easy|Javascript|Done|
 |13|**Roman to Integer**|Easy|Javascript|Done|
 |14|**Longest Common Prefix**|Easy|Javascript|Done|
+|20|**Valid Parentheses**|Easy|Javascript||
+|21|**Merge Two Sorted Lists**|Easy|Javascript||
+|26|**Remove Duplicates from Sorted Array**|Easy|Javascript||
+|27|**Remove Element**|Easy|Javascript||
+|28|**Implement strStr()**|Easy|Javascript||
+|35|**Search Insert Position**|Easy|Javascript||
+|38|**Count and Say**|Easy|Javascript||
+|53|**Maximum Subarray**|Easy|Javascript||
 
 
 ### Medium Level
